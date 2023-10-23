@@ -22,14 +22,18 @@
 # import sys
 # sys.setrecursionlimit(999999)
 
-for n in range (1,100):
-    s = bin(n)[2:]
-    if s.count('1') % 2 == 0:
-        s += '00'
-    else:
-        s += '10'
-    r = int(s,2) # Возврат в 10 С.С.
-    if r>52:
-        print(r)
-        break
+# for n in range (1,100):
+#     s = bin(n)[2:]
+#     if s.count('1') % 2 == 0:
+#         s += '00'
+#     else:
+#         s += '10'
+#     r = int(s,2) # Возврат в 10 С.С.
+#     if r>52:
+#         print(r)
+#         break
+
+
+
+
 
