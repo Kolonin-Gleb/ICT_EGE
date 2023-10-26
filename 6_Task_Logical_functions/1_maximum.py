@@ -71,7 +71,8 @@ for x in 0,1:
 # Убеждаясь в каком случае результат операции в () будет = 0
 # 6. Записать ответ: yzwx
 
-# Task ____ TODO: Почему выдаёт 6 строк, а не 3?
+# Task 7 TODO: Почему выдаёт 6 строк, а не 3?
+'''
 '''
 print("x, y, z, w")
 for x in 0,1:
@@ -80,7 +81,15 @@ for x in 0,1:
             for w in 0,1:
                 if ( (z and y) or ((x <= y) == (y <= w)) ) == 0:
                     print(x, y, z, w)
-'''
+
+
+print("x y z w")
+for x in range(0, 2):
+    for y in range(0, 2):
+        for z in range(0, 2):
+            for w in range(0, 2):
+                if not( (z and y) or ((x <= z) == (y <= w))):
+                    print(x, y, z, w)
 
 # Task 8
 # F = (x ∨ y) → (z ≡ x) = 0
@@ -93,7 +102,16 @@ for x in 0,1:
                 print(x, y, z)
 '''
 
+# Task 9
+# F = (¬x ∧ ¬y) ∨ (y ≡ z) ∨ w = 0
+'''
+print("x, y, z, w")
 
-
-
+for x in 0,1:
+    for y in 0,1:
+        for z in 0,1:
+            for w in 0,1:
+                if ( (not(x) and not(y)) or (y==z) or w) == 0:
+                    print(x, y, z, w)
+'''
 
