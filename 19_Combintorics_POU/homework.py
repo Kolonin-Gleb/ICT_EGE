@@ -59,10 +59,9 @@ print(k)
 '''
 
 # Task 3
-'''
 # Определите количество пятизначных чисел, записанных в девятеричной системе счисления, 
 # в записи которых ровно одна цифра 3, при этом никакая из цифр 5, 6, 7, 8 не стоит рядом с цифрой 3.
-
+'''
 from itertools import product
 
 k = 0
@@ -83,25 +82,112 @@ for x in product('012345678', repeat=5):
 print(k)
 '''
 
-# Task 4
+# Task 4 # Моё неверное решение
 '''
-Все пятибуквенные слова, в составе которых могут быть только буквы Б, А, С, И, К, 
-записаны в алфавитном порядке и пронумерованы начиная с 1.
-
-Под каким номером в списке идёт первое слово, которое не содержит ни одной буквы И и не содержит букв А, стоящих рядом?
-
 from itertools import product
-k = '00000'
-number = 0
-
-# А = 0
+# Под каким номером в списке идёт первое слово, которое не содержит ни одной буквы И и не содержит букв А,
+# стоящих рядом?
+## А = 0
 # Б = 1
-# И = 2
+## И = 2
 # К = 3
 # С = 4
 
-while True:
-    s = ''
+for x in product('01234', repeat=5):
+    if x.count("2") == 0:
+        # Проверка, что нет стоящих рядом А
+        flag = True # Флаг, что предположение верно
+
+        prev_el = x[0]
+        for el in x[1::]:
+            if prev_el == el and el == '0':
+                flag = False
+                break
+            else:
+                prev_el = el 
+        if flag:
+            print(x)
+            break
+
+# ('0', '1', '0', '1', '0')
+# ('А', 'Б', 'А', 'Б', 'А')
+
+print(int('1010', 2)) # 10 => +1
 '''
 
-# Task 5
+# Task 4 # Разбор верного решения
+'''
+from itertools import product
+number = 0
+
+for x in product('АБИКС', 5):
+    number += 1 # 1ое слово = ААААА. 5 букв А
+
+    if x.count("И") == 0:
+        flag = False # Буквы А стоят рядом?
+
+        for i in range(4):
+            if x[i] == x[i + 1] == 'А': # Буквы А стоят рядом. Нарушение условия.
+                flag = True
+                break
+            if flag == False: # Если условие не было нарушено
+                print(number)
+                break
+'''
+
+# Task 5 # 
+# Определите в этом списке количество слов с чётными номерами,
+# которые не начинаются с буквы Ж и 
+# при этом содержат в своей записи не более одной буквы Ч.
+
+# My solution. Why error?
+'''
+from itertools import product
+count = 0
+number = 0
+
+for x in product('АЖИМНУЧ', 6):
+    number += 1
+
+    if number % 2 == 0:
+        if x[0] != "Ж":
+            count_che = 0
+            for i in range(5):
+                if x[i] == 'Ч':
+                    count_che += 1
+            if count_che <= 1:
+                count += 1
+print(count)
+'''
+
+# CHATGPT solution
+'''
+from itertools import product
+
+letters = 'АЖИМНУЧ'
+words_count = 0
+
+for i, word in enumerate(product(letters, repeat=6), start=1):
+    word_str = ''.join(word)
+    # Проверяем условия: четный номер и не начинается с Ж, содержит не более одной буквы Ч
+    if i % 2 == 0 and not word_str.startswith('Ж') and word_str.count('Ч') <= 1:
+        words_count += 1
+
+# 39528
+print("Количество слов с четными номерами, не начинающихся с 'Ж' и содержащих не более одной 'Ч':", words_count)
+'''
+
+# Maximum solution
+'''
+from itertools import product
+number = 0 # Переменная для номера слова
+k = 0 # Счётчик слов
+
+for x in product('АЖИМНУЧ', repeat=6):
+    number += 1
+
+    if x[0] != 'Ж' and x.count("Ч") <= 1 and number % 2 == 0:
+        k += 1
+
+print(k)
+'''
