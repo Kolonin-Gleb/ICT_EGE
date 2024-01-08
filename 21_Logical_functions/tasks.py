@@ -20,3 +20,18 @@
 '''
 '''
 
+# Test
+'''
+'''
+
+x = 'A'
+print(int('A' + x, 13))
+print()
+    
+
+
+
+for x in 'ABCDEF':
+    a = int('A' + x, 13)
+    if a % 
+
