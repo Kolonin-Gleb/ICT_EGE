@@ -1,4 +1,3 @@
-
 # Task 2
 '''
 with open('1.txt', 'r') as file_txt:

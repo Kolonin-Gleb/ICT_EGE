@@ -50,19 +50,20 @@ print(F(18)) #683
 '''
 
 # Task 23
+# ДОЛЖНО СОДЕРЖАТЬ 10
 '''
 def f(x, y):
-    if x > y or x == 10:
+    if x > y:
         return 0
     if x == y:
         return 1
     else:
         return f(x + 1, y) + f(x + 2, y) + f(x * 2, y)
-    
-print(f(3, 12))
+print(f(3, 10) * f(10, 12))
 '''
+# 21 - неверно!
+# 60 - верно
 
 # Task 24
 '''
 '''
-
