@@ -38,7 +38,6 @@ for i in range(y, x - 1, -1): # Идём в обратном порядке
 # Ex 3
 # TODO: Миша покажет
 '''
-'''
 i = 45201
 k = 0
 
@@ -54,6 +53,7 @@ while k != 5:
                 print(i, M)
                 k += 1
     i += 1
+'''
 
 # Ex 5
 '''
@@ -72,7 +72,6 @@ def is_prime(n):
 
 i = 554886
 k = 0 
-
 while k != 5:
     S = sum_digit(i)
 
@@ -81,7 +80,6 @@ while k != 5:
         k += 1
     i-= 1
 '''
-
 # Ex 6
 '''
 def mul_odd_digit(n):
@@ -91,7 +89,6 @@ def mul_odd_digit(n):
             s *= n % 10
         n = n // 10
     return s
-
 def is_prime(n):
     for i in range(2, n // 2 + 1):
         if n % i == 0:
@@ -100,7 +97,6 @@ def is_prime(n):
 
 i = 615223
 k = 0
-
 while k != 6:
     M = mul_odd_digit(i)
 
@@ -109,4 +105,5 @@ while k != 6:
         k += 1
     i+= 1
 '''
+
 
