@@ -37,4 +37,3 @@ for N in range(4, 100): # начинаем с 4
         lst.append(int(R, 2))
 print(max(lst)) # 166
 """
-
