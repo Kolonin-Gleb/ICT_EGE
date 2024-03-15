@@ -31,7 +31,7 @@ for A in range(10_000):
 '''
 
 # Task 2
-
+"""
 counter = 0
 for A in range(10_000):
     if A % 100 == 0:
@@ -49,6 +49,21 @@ for A in range(10_000):
         # break # Просят найти наибольшее
 
 print(counter)
+"""
+
+
+count = 0
+for a in range(1, 300):
+    k = 0
+    for x in range(0, 300):
+        for y in range(0, 300):
+            if ((x >= 9) <= (x**2 < a)) and ((y**2 >= a) <= (y > 5)):
+                k += 1
+    if k == 90_000:
+        count += 1
+print(count)
+
+
 
 # Task 3
 '''
