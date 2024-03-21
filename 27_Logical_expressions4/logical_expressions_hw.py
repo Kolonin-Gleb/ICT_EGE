@@ -4,7 +4,7 @@ for A in range(1, 10_000): # A - целое неотр. число
         print(f"progress = {A}")
 
     flag = True
-    for x in range(1, 500):
+    for x in range(1, 500): 
         if ((x % A != 0) <= ((x % 6 == 0) <= (x % 21 != 0))) == 0: # Следует либо упростить формулу, либо расставить ()
             flag = False # Параметр не подошёл
             break
@@ -62,6 +62,13 @@ for a in range(1, 300):
     if k == 90_000:
         count += 1
 print(count)
+
+
+
+
+
+
+
 
 
 
