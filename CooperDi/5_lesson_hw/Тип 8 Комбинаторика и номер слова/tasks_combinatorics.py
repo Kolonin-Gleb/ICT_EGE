@@ -141,7 +141,12 @@ print(count) # 376832
 
 
 # Task 6040
-'''
+# Чтобы проверить, что два числа имеют разную чётность (1 чётное, 2 нечётное)
+# Сумма 2х чисел разной чётности будет НЕЧЁТНОЙ
+
+# На будущее:
+# Когда требуется выполнить сложную проверку (вроде чередования чётности)
+# Её лучше вынести в отдельную функцию!
 '''
 count = 0
 for d1 in '123456':
@@ -153,20 +158,56 @@ for d1 in '123456':
                         s = d1+d2+d3+d4+d5+d6
                         if s.count('6') == 1:
                             even_odd_swaps = True
-                            for i in range(len("0123456") - 1):
-
-
-
+                            for i in range(len(s) - 1):
+                                if (int(s[i], 7) + int(s[i + 1], 7)) % 2 == 0: # Если сумма чётна, то числа одной чётности!
+                                    even_odd_swaps = False # такие не подходят
+                                    break
+                            if even_odd_swaps:
+                                count += 1
+print(count) # 1296
+'''
 
 # Task 5553
+# Сколько можно составить различных кодов, в составе которых встречаются
+# две подряд идущие гласные, путём перестановки букв слова СОТОЧКА?
+# 7 Букв!
 '''
+count = 0
+letters = set('СОТОЧКА')
+for d1 in letters:
+    for d2 in letters:
+        for d3 in letters:
+            for d4 in letters:
+                for d5 in letters:
+                    for d6 in letters:
+                        for d7 in letters:
+                            s = d1+d2+d3+d4+d5+d6+d7
+                            # Образовано перестановкой
+                            if s.count('О') == 2 and 'С' in s and 'Т' in s and 'Ч' in s and 'К' in s and 'А' in s:
+                                # Есть 2 подряд гласные
+                                if 'ОО' in s or 'ОА' in s or 'АО' in s:
+                                    count += 1
+print(count)
+# ПОМНИ:
+# Слова 
+# ССССССО и ССССССО 
+# Для нас одинаковые слова, а для питона он в конце взял первую О, а во втором случае вторую
+# Для решение проблемы использовать set()
 '''
-
-
 
 # Task 4189
 '''
+num = 0
+for b1 in sorted("БАТЫР"):
+    for b2 in sorted("БАТЫР"):
+        for b3 in sorted("БАТЫР"):
+            for b4 in sorted("БАТЫР"):
+                for b5 in sorted("БАТЫР"):
+                    s = b1+b2+b3+b4+b5
+                    num += 1
+                    if s.count("Ы") == 0 and "АА" not in s:
+                        print(num, s)
+                        exit()
+# 131
 '''
-
-
 
