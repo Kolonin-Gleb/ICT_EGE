@@ -6,7 +6,7 @@
 # s - тек. кол. камней
 # m - номер хода
 
-# Task 1972 с решу ЕГЭ
+# Task 1972
 '''
 def f(s, m):
     if s >= 29: # Достигнуто условие победы
@@ -59,7 +59,7 @@ print("20)", [s for s in range(1, 165) if not f(s,1) and f(s, 3)]) # [41, 78, 81
 print("21)", [s for s in range(1, 165) if not f(s,2) and f(s, 4)]) # мин S [77, 80] => min S = 77
 '''
 
-# ДВЕ КУЧИ
+# =================================== ДВЕ КУЧИ ===================================
 
 # 4599
 '''
@@ -69,7 +69,7 @@ def f(a,b,m):
     h = [f(a+1,b,m-1),f(a,b+1,m-1),f(a*2,b,m-1),f(a,b*2,m-1)]
     return any(h) if (m-1)%2==0 else all(h)
 
-print('19)', [b for b in range(1,241) if f(17,b,2)])#61
+print('19)', [b for b in range(1,241) if f(17,b,2)]) #61
 print('20)', [b for b in range(1,241) if not f(17,b,1) and f(17,b,3)]) #112, 120
 print('21)', [b for b in range(1,241) if not f(17,b,2) and f(17,b,4)]) #111
 '''
@@ -96,5 +96,7 @@ def f(a,b,m):
     return any(h) if (m-1)%2==0 else all(h)
 
 print('19)', [b for b in range(1,70) if f(7,b,2)])# 18
-print('20)', [b for b in range(1,70) if not f(7,b,1) and f(7,b,3)]) #31,34
-print('21)', [b for b in range(1,70) if not f(7,b,2) and f(7,b,4)]) #30,33
+print('20)', [b for b in range(1,70) if not f(7,b,1) and f(7,b,3)]) #31, 34
+print('21)', [b for b in range(1,70) if not f(7,b,2) and f(7,b,4)]) #30, 33
+
+

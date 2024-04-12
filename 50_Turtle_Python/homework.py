@@ -116,7 +116,102 @@ for x in range(-20, 20):
 done()
 '''
 
-# Task 8
+# Task 10
+'''
+from turtle import *
+# screensize(1000, 1000)
+tracer(0)
+k = 50
+left(90)
+
+right(45)
+for i in range(18):
+    forward(8*k)
+    right(135)
+    forward(9*k)
+    right(45)
+
+penup()
+
+for x in range(-20, 20):
+    for y in range(-20, 20):
+        setpos(x*k, y*k)
+        dot(5, 'blue')
+done()
+'''
+
+# Task 41
+'''
+from turtle import *
+# screensize(1000, 1000)
+tracer(0)
+k = 50
+left(90)
+
+for i in range(2):
+    forward(7*k)
+    right(90)
+    forward(11*k)
+    right(90)
+
+penup()
+back(-1*k) # это ведь равносильно вперёд?)
+right(90)
+forward(9*k)
+left(90)
+pendown()
+
+for i in range(2):
+    forward(8*k)
+    right(90)
+    forward(3*k)
+    right(90)
+
+penup()
+for x in range(-20, 20):
+    for y in range(-20, 20):
+        setpos(x*k, y*k)
+        dot(5, 'blue')
+
+done()
+'''
+
+# Task 12
 '''
 '''
+from turtle import *
+screensize(2000, 4000)
+tracer(0)
+k = 40
+left(90)
+
+
+for i in range(2):
+    forward(7*k)
+    right(90)
+    forward(18*k)
+    right(90)
+
+penup()
+back(6*k)
+right(90)
+forward(9*k)
+left(90)
+pendown()
+
+for i in range(2):
+    forward(13*k)
+    right(90)
+    forward(9*k)
+    right(90)
+
+penup()
+for x in range(-20, 20):
+    for y in range(-20, 20):
+        setpos(x*k, y*k)
+        dot(5, 'green')
+
+# включая точки на линиях.
+done()
+
 
