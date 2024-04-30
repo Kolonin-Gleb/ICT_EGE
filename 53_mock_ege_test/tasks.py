@@ -113,15 +113,24 @@ for b1 in sorted("ЕЛКА"):
 '''
 
 # Task 12 #TODO: ПОЧЕМУ НЕТ ВЫВОДА?
-'''
-def is_prime(n):
-    flag = True
-    for i in range(2, n//2+1):
-        if n % i != 0:
-            flag = False
-            break
-    return flag
+# Неверно написана функция is_prime!!!
 
+# def is_prime(n):
+#     flag = True
+#     for i in range(2, n//2+1):
+#         if n % i != 0:
+#             flag = False
+#             break
+#     return flag
+'''
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 for n in range(10_000):
     s = ">" + '3'*15 + '4'*n + '5'*19
@@ -137,7 +146,7 @@ for n in range(10_000):
     summa = 0
     for el in s[:-1]:
         summa += int(el)
-    
+
     # print(summa)
 
     if is_prime(summa):
@@ -153,12 +162,13 @@ print(bin(80)[2:].zfill(8))
 print(bin(240)[2:].zfill(8))
 
 
-# 11111111.11111111.01010000.00000000 # net 
-# 11111111.11111111.11110000.00000000 # mask
 # 11111111.11111111.01010000.00000000 # ip
+# 11111111.11111111.11110000.00000000 # mask
+# 11111111.11111111.01010000.00000000 # net 
+# 12 нулей. # Значит
+print(2**12 // 2) # ip адресов в сети с нечётным числом единиц
+# 2048
 '''
-# Павильно ли я определил ip?
-# Что делать дальше?
 
 # Task 14
 '''
@@ -224,12 +234,12 @@ line = f.readline().replace('A', '1').replace('E', '1')
 line = line.replace('B', '0').replace('C', '0').replace('D', '0')
 f.close()
 
-print(line)
+# print(line)
 
 k = 1 # лок. макс
 m = 1 # глоб. макс
 
-for i in range(0, len(line) - 1, 2):
+for i in range(len(line) - 1): # , 2
     if line[i] == '1' and line[i+1] == '0':
         k += 1
     else:
@@ -281,9 +291,6 @@ print("21) ", [b for b in range(1, 62) if not F(12, b, 2) and F(12, b, 4)]) # 29
 '''
 '''
 
-f = open("17.txt")
-
-
-
-f.close()
+# f = open("17.txt")
+# f.close()
 
