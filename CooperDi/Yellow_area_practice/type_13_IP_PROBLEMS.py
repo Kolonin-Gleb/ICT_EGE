@@ -18,6 +18,7 @@ print(counter) # 32
 
 # TODO: 12947
 '''
+'''
 from ipaddress import ip_network
 
 counter = 0
@@ -27,7 +28,6 @@ for ip in ip_network('203.111.195.0/255.255.240.0'): # 203.111.195.0/20 has host
         counter += 1
 
 print(counter)
-'''
 
 # 12922
 '''
