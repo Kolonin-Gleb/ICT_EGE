@@ -109,20 +109,23 @@ for b1 in set('АНАСТАСИЯ'):
                             for b8 in set('АНАСТАСИЯ'):
                                 for b9 in set('АНАСТАСИЯ'):
                                     word = b1+b2+b3+b4+b5+b6+b7+b8+b9
-                                    word = word.replace('А', '*')
-                                    word = word.replace('Я', '*')
-                                    word = word.replace('И', '*')
-                                    word = word.replace('Н', '+')
-                                    word = word.replace('С', '+')
-                                    word = word.replace('Т', '+')
-                                    if not('***' in word and '+++' in word):
-                                        counter += 1
+                                    # Т.к. слово образуется перестановкой. Каждая буква должна быть исп. своё число раз
+                                    if word.count('А') == 3 and word.count('Я') == 1 and word.count('И') == 1 and word.count('Н') == 1 and word.count('С') == 2 and word.count('Т') == 1:
+                                        word = word.replace('А', '*')
+                                        word = word.replace('Я', '*')
+                                        word = word.replace('И', '*')
+                                        word = word.replace('Н', '+')
+                                        word = word.replace('С', '+')
+                                        word = word.replace('Т', '+')
+                                        if not('***' in word and '+++' in word):
+                                            counter += 1
 
-print(counter) # 8621154 - мой вывод
-# 23040 - верный.
+print(counter)# 23040 - верный.
 '''
 
+
 # 5270
+# Аналогично задаче выше
 '''
 '''
 
