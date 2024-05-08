@@ -1,5 +1,6 @@
 # TODO: Task 1 - board
-# HARD - Skipped
+# ---
+# (33) был верным
 
 # Task 2
 '''
@@ -17,14 +18,15 @@ x y z w
 0 1 0 1
 1 1 0 1
 """
-# ANSWER: yxzw
+# ANSWER: yxzw +
 '''
 
 # Task 3 - Excel
-# 403
+# 403 +
 
 # Task 4 - Excel
-# 26
+# 26 ------
+# (29) был верным
 
 # Task 5
 '''
@@ -37,7 +39,7 @@ for N in range(10_000):
         R_2 = '1' + N_2 + '0'
     R = int(R_2, 2)
     if R == 202:
-        print(N) # 50 - max
+        print(N) # 50 - max (+)
 '''
 
 # Task 6
@@ -71,7 +73,7 @@ for x in range(-20, 20):
         setpos(x*k, y*k)
         dot(5, 'blue')
 
-done() # 10
+done() # 10 (+)
 '''
 
 # Task 7 - paper
@@ -79,7 +81,7 @@ done() # 10
 # print(2**14)
 # print(1280*1024*14*70/12582912)
 # 102.08333333333333
-# Answer = 102
+# Answer = 102 (+)
 '''
 
 # Task 8
@@ -98,25 +100,28 @@ for d1 in '123456':
                             if num.count('++') == 0:
                                 counter += 1
 
-print(counter) # 16448
+print(counter) # 16448 (+)
 '''
 
 # Task 9 - Excel
-# 277
+# 277 (+)
 
 # Task 10 - Word
 '''
 !Без учёта регистра!
 !Глава 3!
 1) по
-= 50
+= 50 (58)
 2) Вычесть
 по (как отдельное слово) = 50 - 3 = 47
+# (58 - 3 = 55)
 3) Прибавить
 по- 0
 Итог = 47
-# ОТВЕТ 47 
+# ОТВЕТ 47 -
+# (55) был верным
 '''
+
 # Task 11 - paper
 '''
 print(2**10)
@@ -125,7 +130,7 @@ print(95*11/8) # байт
 
 print(65536*131/1024)
 '''
-# ANSWER = 8384
+# ANSWER = 8384 +
 
 # Task 12
 '''
@@ -143,7 +148,7 @@ for n in range(3, 10_001):
         cur_summa += int(sym)
     max_summa = max(max_summa, cur_summa)
 
-print(max_summa) # ANSWER = 27
+print(max_summa) # ANSWER = 27 +
 '''
 
 
@@ -157,7 +162,7 @@ for ip in ip_network('192.168.32.96/255.255.255.224', strict=False):
     if adr.count('1') % 2 == 0:
         counter += 1
 
-print(counter) # 16
+print(counter) # 16 +
 '''
 
 # Task 14
@@ -172,11 +177,12 @@ def dec_to_9(n):
 num = 2*729**2019 + 2*243**2020 - 81**2021 + 2 * 27**2022 - 2 * 9**2023 - 2024
 
 res = dec_to_9(num)
-print(len(res.replace('0', ''))) # 4043
+print(len(res.replace('0', ''))) # 4043 +
 '''
 
 # Task 15 - paper
-# ANSWER = 23
+# ANSWER = 23 -
+# (43) был верным ответом
 
 
 # Task 16
@@ -186,7 +192,7 @@ def F(n):
         return 1
     return n + 31 + F(n + 31)
 
-print(F(31) - F(23)) # 520
+print(F(31) - F(23)) # 520 +
 '''
 
 # Task 17
@@ -223,10 +229,10 @@ for i in range(len(data)-2):
 
 print(triplets_counter, max_triplets_sum)
 '''
-# ANSWER: 154 861
+# ANSWER: 154 861 +
 
 # Task 18 - Excel (money labirint)
-# DONE
+# 2353 1008 +
 
 # Task 19 - 21 Game theory
 '''
@@ -250,13 +256,13 @@ def F(s, m):
 
     return any(h) if (m-1) % 2 == 0 else all(h)
 
-print("19)", [s for s in range(1, 135) if not F(s, 1) and F(s, 2)]) # min = 44
-print("20)", [s for s in range(1, 135) if not F(s, 1) and F(s, 3)]) # 2 min: 14 35
-print("21)", [s for s in range(1, 135) if not F(s, 2) and F(s, 4)]) # min = 30
+print("19)", [s for s in range(1, 135) if not F(s, 1) and F(s, 2)]) # min = 44 - (40) был верным
+print("20)", [s for s in range(1, 135) if not F(s, 1) and F(s, 3)]) # 2 min: 14 35 +
+print("21)", [s for s in range(1, 135) if not F(s, 2) and F(s, 4)]) # min = 30 +
 """
 
 # Task 22 - Excel (Parallel processes)
-# Ответ 14
+# Ответ 14 +
 
 # Task 23
 '''
@@ -267,7 +273,7 @@ def F(x, y):
         return 1
     return F(x+1, y) + F(x*2, y) + F(x*3, y)
 
-print(F(2, 9) * F(9, 37)) #91
+print(F(2, 9) * F(9, 37)) #91 +
 '''
 
 # Task 24
@@ -289,7 +295,7 @@ max_symbols_in_seq = 0
 for el in res:
     max_symbols_in_seq += int(el)
 
-print(max_symbols_in_seq) # ANSWER = 186
+print(max_symbols_in_seq) # ANSWER = 186 +
 '''
 
 # Task 25
@@ -301,11 +307,13 @@ for x in range(0, 10**11, 98591):
     if fnmatch(str(x), '123*45??1?'):
         print(x, x// 98591)
 '''
-# ANSWER:
+# ANSWER: +
 """
 1234457911 12521
 12332452417 125087
 """
 
 # Task 26 - excel
+# 1927 77 +
 
+# Набрал 20 первичных = 78 баллов
