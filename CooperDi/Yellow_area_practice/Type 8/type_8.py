@@ -97,6 +97,7 @@ print(counter) #208
 
 # 4957 # TODO: Почему неверно!!!?
 '''
+'''
 counter = 0
 
 for b1 in set('АНАСТАСИЯ'):
@@ -121,7 +122,6 @@ for b1 in set('АНАСТАСИЯ'):
                                             counter += 1
 
 print(counter)# 23040 - верный.
-'''
 
 
 # 5270
