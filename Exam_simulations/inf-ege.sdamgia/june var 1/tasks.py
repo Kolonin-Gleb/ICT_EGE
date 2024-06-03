@@ -24,7 +24,6 @@ x y z w
 
 # Task 4 - Excel (draw + table)
 
-
 # Task 5
 '''
 result_set = set()
@@ -43,7 +42,6 @@ for N in range(10, 1001):
 
 print(len(result_set)) # Кол. различных значений = 7
 '''
-
 
 # Task 6
 '''
@@ -110,11 +108,10 @@ while '999' in s or '888' in s:
 print(s) #8899
 '''
 
-# TODO: Task 13 IP
-'''
-'''
+# Task 13 IP
 # from ipaddress import ip_network
 # New condition type 
+# Лучше решу из книги Крылова аналогичный номер
 
 
 # Task 14
@@ -125,9 +122,18 @@ print(num_2.count('1')) #2015
 '''
 
 # Task 15
+# Подсмотрел шаблон и Решени
 '''
+def f(x,a): 
+    return ((x in a) <= (x**2 <= 100)) and ((x**2 <= 64) <= (x in a))
+ 
+a = set([i for i in range(-1000,1000)])
+
+for x in range(-1000, 1000):
+    if not f(x,a):
+        a.remove(x)
+print(len(a) - 1)
 '''
-# I need to check templates
 
 # Task 16
 '''
@@ -166,6 +172,36 @@ print(pair_counter, max_pair_sum) #2288 14875
 # Task 18 - Excel labirint
 
 # Task 19-21 Game Theory
+"""
+1 Куча
+Ходы:
++1
++4
+*5
+
+Победа S >= 68
+Изначально 1 ≤ S ≤ 67
+"""
+'''
+'''
+
+def F(s, m):
+    # усл. победы
+    if s >= 68:
+        return m % 2 == 0
+    # усл. выхода
+    if m == 0:
+        return 0
+    # Рассчитать все варианты ходов
+    h = [F(s+1, m-1), F(s+4, m-1), F(s*5, m-1)]
+    return any(h) if (m-1) %2 == 0 else all(h)
+
+
+print("19)", [s for s in range(1, 68) if F(s, )]) # Победа Вани после неудачного хода Пети
+print("20)", "") # 
+print("21)", "") # 
+
+
 
 # Task 22 - Excel
 
@@ -183,7 +219,8 @@ print(F(3, 10) * F(10, 12)) #60
 '''
 
 
-# Task 24 # Подсмотрел решение
+# Task 24
+# Подсмотрел решение
 '''
 f=open('24.txt').readline().split('XZZY')
 maxi=0
@@ -194,11 +231,10 @@ print(maxi) # Вообще с маленькой вероятностью это
 '''
 
 # Task 25
-'''
-'''
-
+# Новое условие.
+# Лучше решу из книги Крылова аналогичный номер
 
 
 # Task 26 - ??
-
-
+'''
+'''
