@@ -180,6 +180,40 @@ print(F(2024) - F(2022)) #8096
 
 # Task 17
 '''
+def is_single_2dig_num(n1, n2, n3):
+    counter_2dig_num = 0
+    if n1 > 9 and n1 < 100:
+        counter_2dig_num += 1
+    if n2 > 9 and n2 < 100:
+        counter_2dig_num += 1
+    if n3 > 9 and n3 < 100:
+        counter_2dig_num += 1
+
+    if counter_2dig_num == 1:
+        return True
+    return False
+
+f = open('17var01.txt')
+data = [int(el) for el in f]
+f.close()
+
+triplets_counter = 0
+max_triplet_sum = 0
+
+min_ends_25 = 999999999925
+
+for el in data:
+    if el % 100 == 25:
+        min_ends_25 = min(min_ends_25, el)
+
+for i in range(len(data)-2):
+    if is_single_2dig_num(data[i], data[i+1], data[i+2]):
+        triplet_sum = (data[i] + data[i+1] + data[i+2])
+        if triplet_sum < min_ends_25:
+            max_triplet_sum = max(max_triplet_sum, triplet_sum)
+            triplets_counter += 1
+        
+print(triplets_counter, max_triplet_sum) # 247 41
 '''
 
 # Task 18 - Excel labirint
