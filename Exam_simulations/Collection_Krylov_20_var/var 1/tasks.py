@@ -13,10 +13,6 @@ for x in 0,1:
 '''
 # xwzy
 
-# TODO: Task 3 - Excel
-
-# TODO: Task 4 - Excel (draw + table)
-
 # Task 5
 '''
 def dec_to_4(n):
@@ -40,7 +36,6 @@ for N in range(1, 10_001):
         print(N) # Нужно максимальное
 '''
 # Answer: 61
-
 
 # Task 6
 '''
@@ -83,8 +78,6 @@ done()
 '''
 #577
 
-# Task 7 - board/paper
-
 # Task 8
 '''
 counter = 0
@@ -101,12 +94,6 @@ for b1 in sorted("ФАВОРИТ"):
                             counter += 1
 print(counter) #8640
 '''
-
-# Task 9 - Excel
-
-# Task 10 - Word
-
-# Task 11 - board/paper
 
 # Task 12
 '''
@@ -150,14 +137,33 @@ for ip in net:
 print(counter) # 5
 '''
 
-# TODO: Позже. Task 14
+# Task 14
+# Новый подход
 '''
+for x in "0123456789ABCDEFGHIJKLM":
+    num1 = int(f"1{x}1{x}1{x}1{x}1", 23)
+    num2 = int(f"20{x}24", 23)
+    num3 = int(f"1{x}235", 23)
+    res = num1+num2+num3
+    if res % 22 == 0:
+        print(res // 22) # 4651779499
+        break
 '''
-
 
 # Task 15
 '''
+for A in range(-1000, 1000):
+    flag = True
+    for x in range(0, 300):
+        for y in range(0, 300):
+            if ((4*x + y < A) or (x < y) or (22 <= x)) == 0:
+                flag = False
+                break
+    if flag:
+        print(A) # 106
+        break
 '''
+
 
 # Task 16
 '''
@@ -179,7 +185,6 @@ print(F(2024) - F(2022)) #8096
 # Task 18 - Excel labirint
 
 # Task 19-21 Game Theory
-# TODO: Разобрать с Димой!!
 # Вспоминаю, разбираюсь, повторяю
 '''
 Ходы:
@@ -199,13 +204,13 @@ def F(s, m):
         return 0
     # Рассмотреть все возможные ходы
     h = [F(s+1, m-1), F(s+4, m-1), F(s*3, m-1)]
-
-    return any(h) if (m-1 % 2) == 0 else all(h) # Для неудачного заменить 2th all to any
+    # (m-1) - обязательно в скобках. Задаёт приоритет!
+    return any(h) if (m-1) % 2 == 0 else all(h) # Для неудачного заменить 2th all to any
 
 # Петя не выиграет 1ым ходом, но Ваня побеждает своим 1ым ходом
 print("19)", [s for s in range(1, 202) if not F(s, 1) and F(s, 2)]) # 67
-print("20)", [s for s in range(1, 202) if not F(s, 1) and F(s, 3)]) # 
-print("21)", [s for s in range(1, 202) if not F(s, 2) and F(s, 4) or F(s, 6)]) # 
+print("20)", [s for s in range(1, 202) if not F(s, 1) and F(s, 3)]) # 63 66
+print("21)", [s for s in range(1, 202) if not F(s, 2) and F(s, 4)]) # min 62
 """
 
 
@@ -224,21 +229,71 @@ print(F(3, 24)) #298
 '''
 
 # Task 24
+# index - место где встречается
+# Сколько раз встретилось А
+# Работая с index-ами определить мин. разницу
 '''
+f = open('24var01.txt')
+line = f.readline()
+f.close()
+A_indexes = []
+
+for ind, el in enumerate(line):
+    if el == "A":
+        A_indexes.append(ind)
+
+# print(A_indexes)
+
+cur_seq_len = 0
+min_seq_len = 10**10
+
+for i in range(2023, len(A_indexes)):
+    cur_seq_len = A_indexes[i] - A_indexes[i-2023]+1 # +1, чтобы получить ДЛИНУ!
+    min_seq_len = min(min_seq_len, cur_seq_len)
+
+print(min_seq_len) #7001
 '''
-
-
 
 # Task 25
-# TODO: Ответ не сходится!
 '''
 from fnmatch import fnmatch
 # В этом номере начинаем цикл с 0, не смотря на натуральные числа
 for i in range(0, 10**10, 31007):
-    if fnmatch(str(i), '123*4?5'):
+    if fnmatch(str(i), '1*34?5?9'):
         print(i, i//31007)
 '''
 
-# Task 26 - ??
+# Task 26 - by Python (queue)
+'''
+f = open('26var01.txt')
+f.readline()
+data = []
 
+for el in f:
+    st, duration = map(int, el.split())
+    data.append([st+duration, st])
 
+# print(data[:10])
+data.sort()
+# print(data[:10])
+
+attended = [] # Посещенные встречи
+cur_time = 0 # в минутах (время освобождения CEO)
+
+potential_26 = []
+
+for el in data:
+    # Потенциальные 26 встречи
+    if len(attended) == 25 and el[1] >= cur_time: # Рассматриваемая встреча может быть посещена
+        potential_26.append(el)
+
+    elif len(attended) != 25 and el[1] >= cur_time: # Время старта > время окончания тек. встречи (освобождения CEO)
+        attended.append(el)
+        cur_time = el[0]
+
+print(attended[-1][0]) # Время окончания 25 встречи
+print(potential_26) # Глазами увидили, что макс. перерыв = 20
+
+print(len(attended)) # Сколько встреч сможем посетим = 26
+f.close()
+'''
