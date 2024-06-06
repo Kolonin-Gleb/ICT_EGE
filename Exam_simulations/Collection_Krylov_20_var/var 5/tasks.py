@@ -199,9 +199,8 @@ for i in range(len(data)-1):
 print(pair_counter, max_sum_of_squares) # 2 9997800125
 '''
 
-# TODO: Разобрать с Димой. В чём ошибка?
 # Task 18 - Excel labirint
-# Answer: 
+# Answer: 1174 598
 
 # Task 19-21 Game Theory
 '''
